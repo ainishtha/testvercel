@@ -1,0 +1,10 @@
+# Render free-tier deployment (https://render.com).
+# New (ephemeral) SQLite DB on every deploy/restart — fine for demos:
+# users click "Load demo" to reseed. No credit card required for free plan.
+services:
+  - type: web
+    name: impactus
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
